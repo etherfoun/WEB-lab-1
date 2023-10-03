@@ -1,5 +1,40 @@
+$menu-element-width: 100px;
+$menu-element-overlapping: $menu-element-width * 0.8;
+
 .navbar {
-    li{
-        list-style-type: none;
+    font-family: Arial, Helvetica, sans-serif;
+    div {
+        background: rgb(191,205,147);
+        background: linear-gradient(0deg, rgba(191,205,147,1) 0%, rgba(208,215,174,1) 45%, rgba(231,234,215,1) 100%); 
+        color: #734a80;
+
+        display: flex;
+        justify-content: center;
+        float: left;
+        align-items: center;
+
+        width: $menu-element-width;
+        height: 50px;
+
+        border-radius: 0 $menu-element-width $menu-element-width 0;
+
+        position: absolute;
+
+        box-shadow: inset -1px 0px 0px 0.5px #ffffff;
+    }
+
+    #background-div {
+        width: $menu-element-width * 5 - 40px;
+    }
+
+    #first { z-index: 5; left: $menu-element-overlapping * 0; }
+    #second { z-index: 4; left: $menu-element-overlapping * 1; }
+    #third { z-index: 3; left: $menu-element-overlapping * 2; }
+    #fourth { z-index: 2; left: $menu-element-overlapping * 3; }
+    #fifth { z-index: 1; left: $menu-element-overlapping * 4; }
+
+    div:nth-last-child(-n + 1):hover {
+        background: rgb(214,222,111);
+        background: linear-gradient(0deg, rgba(214,222,111,1) 0%, rgba(208,215,174,1) 45%, rgba(239,242,224,1) 100%);  
     }
 }
